@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHARUSAT - University Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Popup (Hidden by default) -->
+    <div id="welcome-popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>🎓</h2>
+                <button id="close-popup" class="close-btn">&times;</button>
+            </div>
+            <div class="typewriter-container">
+                <h3 id="typewriter-text" class="typewriter"></h3>
+                <span class="cursor">|</span>
+            </div>
+            <p class="popup-subtitle">Empowering minds, shaping futures</p>
+            <button id="explore-btn" class="explore-btn">Explore Now</button>
+        </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgJMZWGEa5fhgEJAbFTq3P8mgBr-VIPQr1Vw&s" alt="CHARUSAT Logo">
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>Charotar University of Science and Technology</h1>
+        <div id="user-info" class="user-info" style="display: none;">
+            <span id="welcome-message"></span>
+            <span class="user-separator">|</span>
+            <span id="login-time"></span>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="about.html">About us</a>
+        <a href="fees.html">Fees</a>
+        <a href="courses.html">Courses</a>
+        <a href="department.html">Department</a>
+        <a href="faculty.html">Faculty</a>
+        <a href="semester.html">Semester</a>
+        <a href="placement.html">Placement</a>
+        <a href="events.html">Events</a>
+        <a href="cu.html">Contact Us</a>
+        <a href="logout.html">Logout</a>
+
+        
+        <!-- Login/Logout buttons -->
+        
+    </nav>
+
+    <!-- Main Image -->
+    <div class="main-photo">
+        <img src="https://d13loartjoc1yn.cloudfront.net/upload/institute/images/large/121123122228_Emergence_of_CHARUSAT___top_image.webp" alt="CHARUSAT Campus">
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- FAQs Section -->
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq('faq1')">
+                <span>What is the admission process?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div id="faq1" class="faq-content">
+                <p>The admission process typically involves filling out an application form, submitting required documents, and attending an interview or entrance exam. Our admissions team will guide you through each step.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq('faq2')">
+                <span>What are the eligibility criteria for courses?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div id="faq2" class="faq-content">
+                <p>Eligibility criteria vary by course. Generally, a minimum percentage in the qualifying examination is required. Please check our courses section for specific requirements for each program.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-button" onclick="toggleFaq('faq3')">
+                <span>What are the placement opportunities?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div id="faq3" class="faq-content">
+                <p>The university has a dedicated placement cell that collaborates with various companies to provide placement opportunities for students. We maintain strong industry connections and achieve excellent placement rates.</p>
+            </div>
+        </div>
+
+        <!-- Image Slider Section -->
+        <h2>Campus Gallery</h2>
+        
+        <div class="slider-container">
+            <button class="slider-btn prev-btn" onclick="prevImage()" aria-label="Previous image">
+                &#8249;
+            </button>
+            
+            <div class="slider-wrapper">
+                <img id="slider-image" src="https://d13loartjoc1yn.cloudfront.net/upload/institute/images/large/121123122228_Emergence_of_CHARUSAT___top_image.webp" alt="CHARUSAT Campus Image">
+                <div class="image-counter">
+                    <span id="current-image">1</span> / <span id="total-images">3</span>
+                </div>
+            </div>
+            
+            <button class="slider-btn next-btn" onclick="nextImage()" aria-label="Next image">
+                &#8250;
+            </button>
+        </div>
+
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)" aria-label="Go to image 1"></span>
+            <span class="dot" onclick="currentSlide(1)" aria-label="Go to image 2"></span>
+            <span class="dot" onclick="currentSlide(2)" aria-label="Go to image 3"></span>
+        </div>
+
+        <!-- Welcome Popup Button -->
+        <div class="popup-button-container">
+            <button id="show-welcome-btn" class="welcome-popup-btn">
+                <span class="btn-icon">🎉</span>
+                Show Welcome Message
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 University Management System</p>
+            <p>Created By: Smit Kansagara</p>
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

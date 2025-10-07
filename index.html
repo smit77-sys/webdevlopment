@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - CHARUSAT</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Use the same stylesheet as register.html -->
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Login</h2>
+            <!-- This div will display the success message after registration -->
+            <div id="login-message" class="message" style="display:none;"></div>
+            
+            <!-- CORRECTED: The action now points to the PHP file that handles the login -->
+            <form id="login-form" action="index.php" method="POST">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p style="text-align: center; margin-top: 1rem;">
+                    Don't have an account? <a href="register.html">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Simple script to show the confirmation message -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const loginMessage = document.getElementById('login-message');
+
+            // Check if the URL has the 'registered=1' parameter
+            if (params.has('registered')) {
+                loginMessage.textContent = 'Registration successful! Please login.';
+                loginMessage.style.backgroundColor = '#d4edda'; // Green background for success
+                loginMessage.style.color = '#155724';
+                loginMessage.style.padding = '10px';
+                loginMessage.style.marginBottom = '15px';
+                loginMessage.style.borderRadius = '4px';
+                loginMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,667 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header,
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Welcome Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.popup-content {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  color: white;
+  position: relative;
+  animation: slideUp 0.6s ease-out;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.popup-header h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.typewriter-container {
+  margin: 20px 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typewriter {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+  display: inline-block;
+}
+
+.cursor {
+  font-size: 1.8rem;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+.popup-subtitle {
+  font-size: 1.1rem;
+  margin: 20px 0;
+  opacity: 0.9;
+}
+
+.explore-btn {
+  background-color: white;
+  color: #667eea;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Welcome Popup Button */
+.popup-button-container {
+  text-align: center;
+  margin: 40px 0;
+  padding: 20px;
+}
+
+.welcome-popup-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.welcome-popup-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.welcome-popup-btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Main Site Styles */
+.logo {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f8f9fa;
+}
+
+.logo img {
+  width: 800px;
+  height: auto;
+  max-width: 100%;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.user-info {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.user-separator {
+  color: #ccc;
+}
+
+nav {
+  background-color: #005ec2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a,
+nav button {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 5px 15px;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+nav a:hover,
+nav button:hover {
+  background-color: white;
+  color: #005ec2;
+  transform: translateY(-2px);
+}
+
+/* Auth buttons styling */
+.auth-btn {
+  position: relative;
+}
+
+.login-btn {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.main-photo {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #f8f9fa;
+}
+
+.main-photo img {
+  width: 100%;
+  max-width: 1000px;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.content h2 {
+  color: #003366;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Form and Container Styles (for login, register, etc.) */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.form-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #004494;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* FAQ Styles */
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-button {
+  width: 100%;
+  background-color: #f8f9fa;
+  border: none;
+  padding: 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-button:hover {
+  background-color: #e9ecef;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-content {
+  display: none;
+  padding: 20px;
+  background-color: white;
+  border-top: 1px solid #e0e0e0;
+  animation: slideDown 0.3s ease-out;
+}
+
+.faq-content.active {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+/* Image Slider Styles */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
+  gap: 20px;
+}
+
+.slider-wrapper {
+  flex: 1;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+}
+
+.slider-wrapper img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.slider-btn {
+  background-color: #005ec2;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider-btn:hover {
+  background-color: #003366;
+  transform: scale(1.1);
+}
+
+.slider-btn:active {
+  transform: scale(0.95);
+}
+
+.slider-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #005ec2;
+  transform: scale(1.2);
+}
+
+/* Footer Styles */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
+
+.footer-links {
+  margin-top: 15px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo img {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a,
+  nav button {
+    margin: 5px 10px;
+  }
+
+  .main-photo img {
+    height: 300px;
+  }
+
+  .slider-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .content {
+    padding: 20px 15px;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .popup-content {
+    padding: 30px 20px;
+  }
+
+  .typewriter {
+    font-size: 1.4rem;
+  }
+
+  .welcome-popup-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .user-info {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    padding: 20px 15px;
+  }
+
+  .typewriter {
+    font-size: 1.2rem;
+  }
+
+  .faq-button {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .welcome-popup-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+}

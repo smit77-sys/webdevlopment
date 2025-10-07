@@ -1,0 +1,83 @@
+<?php
+// --- 1. SETTING A COOKIE ---
+// Check if the form has been submitted to set the cookie
+if (isset($_POST['username'])) {
+    $username = $_POST['username'];
+    $cookie_name = "user";
+    $cookie_value = $username;
+    // Set the cookie to expire in 1 day (86400 seconds). The "/" means it's available on the entire website.
+    setcookie($cookie_name, $cookie_value, time() + 86400, "/"); 
+    // Redirect to the same page to see the cookie being read
+    header("Location: cookie_test.php");
+    exit();
+}
+
+// --- 2. READING A COOKIE ---
+$cookie_message = "No cookie is set.";
+// Check if the 'user' cookie exists and read its value
+if (isset($_COOKIE['user'])) {
+    $username = $_COOKIE['user'];
+    $cookie_message = "Welcome back, " . htmlspecialchars($username) . "!";
+}
+
+// --- 3. DELETING A COOKIE ---
+// Check if the delete link was clicked
+if (isset($_GET['action']) && $_GET['action'] == 'delete') {
+    // To delete a cookie, set its expiration date to the past
+    setcookie("user", "", time() - 3600, "/");
+    // Redirect to the same page to see the change
+    header("Location: cookie_test.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHARUSAT Fee Details</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+</head>
+<body>
+
+    <!-- Optional Header -->
+    <header>
+        <h1>CHARUSAT UNIVERSITY</h1>
+        <p>Official Fee Structure</p>
+    </header>
+ 
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Undergraduate Programs</h2>
+        <ul>
+            <li><strong>B.Tech (Engineering):</strong> ₹1,20,000 to ₹1,50,000 per year</li>
+            <li><strong>BBA / BCA:</strong> ₹50,000 to ₹70,000 per year</li>
+            <li><strong>B.Pharm:</strong> ₹1,10,000 per year</li>
+            <li><strong>B.Sc (IT / Nursing / etc.):</strong> ₹60,000 to ₹85,000 per year</li>
+        </ul>
+
+        <h2>Postgraduate Programs</h2>
+        <ul>
+            <li><strong>M.Tech:</strong> ₹1,20,000 to ₹1,50,000 per year</li>
+            <li><strong>MBA:</strong> ₹1,00,000 to ₹1,50,000 per year</li>
+            <li><strong>M.Sc / M.Pharm:</strong> ₹80,000 to ₹1,10,000 per year</li>
+        </ul>
+
+        <h2>Ph.D. Programs</h2>
+        <ul>
+            <li><strong>Ph.D. (Full-time):</strong> ₹50,000 to ₹70,000 per year</li>
+            <li><strong>Ph.D. (Part-time):</strong> ₹30,000 to ₹50,000 per year</li>
+        </ul>
+
+        <h2>Other Fees</h2>
+        <p>For the most accurate and updated fee details, please visit:  
+            <a href="https://www.charusat.ac.in" target="_blank">👉 www.charusat.ac.in</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 CHARUSAT University | All Rights Reserved
+    </footer>
+
+</body>
+</html>
